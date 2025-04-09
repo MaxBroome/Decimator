@@ -1,0 +1,21 @@
+{
+    "name": "@imput/version-info",
+    "version": "1.0.0",
+    "description": "helper package for decimator that provides commit info & version from package file.",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/imputnet/decimator.git"
+    },
+    "author": "imput",
+    "license": "AGPL-3.0",
+    "bugs": {
+        "url": "https://github.com/imputnet/decimator/issues"
+    },
+    "homepage": "https://github.com/imputnet/decimator#readme",
+    "dependencies": {
+        "@imput/version-info": "file:"
+    }
+}
