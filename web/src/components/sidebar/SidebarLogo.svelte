@@ -3,7 +3,7 @@
 </script>
 
 <div id="decimator-logo">
-    <IconDecimator />
+    <IconDecimator theme={null}/>
 </div>
 
 <style>

@@ -34,8 +34,8 @@
     <div id="login-container" class="center-column-container">
         <div class="login-card">
             <div class="logo-section">
-                <div class="logo-icon" class:dark-mode={$currentTheme === 'dark'} class:light-mode={$currentTheme === 'light'}>
-                    <IconDecimator />
+                <div class="logo-icon">
+                    <IconDecimator theme={$currentTheme} />
                 </div>
                 <h1 class="title">Decimator</h1>
                 <!-- <p class="subtitle">Welcome to Decimator!</p> -->
@@ -123,7 +123,7 @@
     .logo-icon {
         width: 76px;
         height: 76px;
-        background-color: var(--secondary);
+        background-color: color-mix(in srgb, var(--secondary) 25%, transparent);
         border-radius: 20px;
         display: flex;
         align-items: center;
@@ -134,14 +134,6 @@
 
     .logo-icon:hover {
         transform: scale(1.05);
-    }
-
-    .light-mode :global(svg path) {
-        fill: white !important;
-    }
-
-    .dark-mode :global(svg path) {
-        fill: black !important;
     }
 
     .logo-icon :global(svg) {

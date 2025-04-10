@@ -2,17 +2,15 @@
     import { t } from "$lib/i18n/translations";
     import { isLoading, isAuthenticated } from '$lib/pocketbase/client';
     import { goto } from '$app/navigation';
-    import currentTheme from "$lib/state/theme";
 
+    import currentTheme from "$lib/state/theme";
     import Omnibox from "$components/save/Omnibox.svelte";
     import SupportedServices from "$components/save/SupportedServices.svelte";
+    import IconDecimator from "$components/icons/Decimator.svelte";
 
     $: if (!$isLoading && !$isAuthenticated) {
         goto('/login');
     }
-
-    // Reactive statement to update the image source based on the theme
-    $: imageSrc = $currentTheme === 'dark' ? '/icons/transparent/192.png' : '/icons/inverted/192.png';
 </script>
 
 <svelte:head>
@@ -28,12 +26,9 @@
         data-first-focus
         data-focus-ring-hidden
     >
-        <img
-            src={imageSrc}
-            height="152"
-            alt="Decimator Logo"
-            aria-hidden="true"
-        />
+    <div class="logo-icon">
+        <IconDecimator theme={$currentTheme} />
+    </div>
         <Omnibox/>
     </main>
     <div id="love-note">
@@ -56,6 +51,11 @@
         width: 100%;
         height: 100%;
         gap: 15px;
+    }
+
+    .logo-icon {
+        width: 76px;
+        height: 76px;
     }
 
     #love-note {
